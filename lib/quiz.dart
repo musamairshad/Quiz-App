@@ -11,7 +11,6 @@ class Quiz extends StatefulWidget {
   }
 }
 
-
 class _QuizState extends State<Quiz> {
   // Widget? activeScreen;
 
