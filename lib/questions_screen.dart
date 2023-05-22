@@ -53,7 +53,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                   answerText: answer,
                   onTap: () {
                     answerQuestion(answer); // This function body will only
-                    // execute when button or you can say anonymos function 
+                    // execute when button or you can say anonymos function
                     // is triggered.
                   });
             }),
