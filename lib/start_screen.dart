@@ -31,7 +31,6 @@ class StartScreen extends StatelessWidget {
               color: const Color.fromARGB(255, 237, 223, 252),
               fontSize: 24.0,
             ),
-        
           ),
           const SizedBox(height: 30),
           OutlinedButton.icon(
