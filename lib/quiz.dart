@@ -39,7 +39,7 @@ class _QuizState extends State<Quiz> {
       // This block of code will execute when we ran out of questions
       // means we answered all the available questions.
       setState(() {
-        selectedAnswers = [];
+        // selectedAnswers = [];
         activeScreen = 'results-screen';
       });
     }
