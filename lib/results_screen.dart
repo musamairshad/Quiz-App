@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/data/questions.dart';
+import 'package:quiz_app/questions_summary.dart';
 
 class ResultsScreen extends StatelessWidget {
   const ResultsScreen({
@@ -37,7 +38,9 @@ class ResultsScreen extends StatelessWidget {
               children: [
                 const Text('You answered X out of Y questions correctly!'),
                 const SizedBox(height: 30),
-                const Text('List of answers and questions...'),
+                QuestionsSummary(getSummaryData()), // Here getSummaryData
+                // executed as a Function. Here we are not passing Function
+                // name as a value because we Need List<Map> not Function.
                 const SizedBox(height: 30),
                 TextButton(
                   onPressed: () {},
