@@ -29,6 +29,12 @@ class ResultsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final summaryData = getSummaryData();
+    final numOfTotalQuestions = questions.length;
+    final numOfCorrectQuestions = summaryData.where((data) {
+      return data['user_answer'] == data['correct_answer'];
+    }).length;
+
     return SizedBox(
         width: double.infinity,
         child: Container(
@@ -36,9 +42,11 @@ class ResultsScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text('You answered X out of Y questions correctly!'),
+                Text(
+                    'You answered $numOfCorrectQuestions out of $numOfTotalQuestions questions correctly!'),
                 const SizedBox(height: 30),
-                QuestionsSummary(getSummaryData()), // Here getSummaryData
+                QuestionsSummary(summaryData),
+                // QuestionsSummary(getSummaryData()), // Here getSummaryData
                 // executed as a Function. Here we are not passing Function
                 // name as a value because we Need List<Map> not Function.
                 const SizedBox(height: 30),
