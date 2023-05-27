@@ -16,7 +16,7 @@ class Quiz extends StatefulWidget {
 class _QuizState extends State<Quiz> {
   // Widget? activeScreen;
 
-  List<String> selectedAnswers = [];
+  List<String> _selectedAnswers = [];
   var activeScreen = 'start-screen';
 
   // @override
@@ -33,9 +33,9 @@ class _QuizState extends State<Quiz> {
   }
 
   void chooseAnswer(String answer) {
-    selectedAnswers.add(answer);
+    _selectedAnswers.add(answer);
 
-    if (selectedAnswers.length == questions.length) {
+    if (_selectedAnswers.length == questions.length) {
       // This block of code will execute when we ran out of questions
       // means we answered all the available questions.
       setState(() {
@@ -47,7 +47,7 @@ class _QuizState extends State<Quiz> {
 
   void restartQuiz() {
     setState(() {
-      selectedAnswers = [];
+      _selectedAnswers = [];
       activeScreen = 'questions-screen';
     });
   }
@@ -61,8 +61,8 @@ class _QuizState extends State<Quiz> {
     }
 
     if (activeScreen == 'results-screen') {
-      screenWidget =
-          ResultsScreen(chosenAnswers: selectedAnswers, onRestart: restartQuiz);
+      screenWidget = ResultsScreen(
+          chosenAnswers: _selectedAnswers, onRestart: restartQuiz);
     }
 
     // final screenWidget = activeScreen == 'start-screen'
